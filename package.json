@@ -1,6 +1,6 @@
 {
   "name": "@adminjs/design-system",
-  "version": "4.1.2-sabro.1",
+  "version": "4.1.2-sabro.2",
   "description": "DesignSystem which AdminJS is built with",
   "type": "module",
   "exports": {
@@ -20,7 +20,7 @@
   "scripts": {
     "release": "semantic-release",
     "build": "babel src --out-dir build --copy-files --no-copy-ignored --extensions '.ts,.js,.jsx,.tsx'",
-    "types": "tsc",
+    "types": "ts-patch install -s && tsc",
     "clean": "rm -fR types && rm -fR build",
     "lint": "eslint './src/**/*' './vendor-types/**/*'",
     "check:all": "yarn build && yarn lint",
@@ -28,8 +28,7 @@
     "storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 6006",
     "storybook:build": "storybook build",
     "storybook:deploy": "firebase deploy --only hosting",
-    "dev": "yarn build && yarn types && yarn bundle",
-    "prepare": "ts-patch install -s"
+    "dev": "yarn build && yarn types && yarn bundle"
   },
   "husky": {
     "hooks": {
@@ -131,7 +130,7 @@
     "styled-components": "5.3.9",
     "styled-system": "^5.1.5",
     "text-mask-addons": "^3.8.0",
-    "tinymce": "7.9.3"
+    "tinymce": "8.10.1"
   },
   "resolutions": {
     "@emotion/react": "11.10.6",
