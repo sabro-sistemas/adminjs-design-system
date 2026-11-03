@@ -1,6 +1,6 @@
 {
   "name": "@adminjs/design-system",
-  "version": "4.1.1",
+  "version": "4.1.2-sabro.1",
   "description": "DesignSystem which AdminJS is built with",
   "type": "module",
   "exports": {
@@ -14,7 +14,7 @@
       "types": "./types/src/utils/styled.d.ts"
     }
   },
-  "repository": "git@github.com:SoftwareBrothers/adminjs-design-system.git",
+  "repository": "git@github.com:sabro-sistemas/adminjs-design-system.git",
   "author": "Wojciech Krysiak",
   "license": "MIT",
   "scripts": {
@@ -29,7 +29,7 @@
     "storybook:build": "storybook build",
     "storybook:deploy": "firebase deploy --only hosting",
     "dev": "yarn build && yarn types && yarn bundle",
-    "prepare": "husky install && ts-patch install -s"
+    "prepare": "ts-patch install -s"
   },
   "husky": {
     "hooks": {
@@ -71,6 +71,7 @@
     "@types/hoist-non-react-statics": "3.3.1",
     "@types/react": "^18.0.15",
     "@types/react-datepicker": "^4.10.0",
+    "@types/react-dom": "^18.3.0",
     "@types/react-text-mask": "^5.4.11",
     "@types/styled-components": "^5.1.26",
     "@types/styled-system": "^5.1.16",
@@ -103,27 +104,18 @@
     "typescript-transform-paths": "^3.4.7"
   },
   "dependencies": {
+    "@floating-ui/dom": "^1.7.4",
     "@hypnosphi/create-react-context": "^0.3.1",
-    "@tinymce/tinymce-react": "^4.3.2",
-    "@tiptap/core": "2.1.13",
-    "@tiptap/extension-bubble-menu": "2.1.13",
-    "@tiptap/extension-character-count": "2.1.13",
-    "@tiptap/extension-code": "2.1.13",
-    "@tiptap/extension-document": "2.1.13",
-    "@tiptap/extension-floating-menu": "2.1.13",
-    "@tiptap/extension-heading": "2.1.13",
-    "@tiptap/extension-image": "2.1.13",
-    "@tiptap/extension-link": "2.1.13",
-    "@tiptap/extension-table": "2.1.13",
-    "@tiptap/extension-table-cell": "2.1.13",
-    "@tiptap/extension-table-header": "2.1.13",
-    "@tiptap/extension-table-row": "2.1.13",
-    "@tiptap/extension-text": "2.1.13",
-    "@tiptap/extension-text-align": "2.1.13",
-    "@tiptap/extension-typography": "2.1.13",
-    "@tiptap/pm": "2.1.13",
-    "@tiptap/react": "2.1.13",
-    "@tiptap/starter-kit": "2.1.13",
+    "@tinymce/tinymce-react": "^6.3.1",
+    "@tiptap/core": "3.32.2",
+    "@tiptap/extension-image": "3.32.2",
+    "@tiptap/extension-table": "3.32.2",
+    "@tiptap/extension-text-align": "3.32.2",
+    "@tiptap/extension-typography": "3.32.2",
+    "@tiptap/extensions": "3.32.2",
+    "@tiptap/pm": "3.32.2",
+    "@tiptap/react": "3.32.2",
+    "@tiptap/starter-kit": "3.32.2",
     "date-fns": "^2.29.3",
     "flat": "^5.0.2",
     "hoist-non-react-statics": "3.3.2",
@@ -138,30 +130,15 @@
     "react-text-mask": "^5.5.0",
     "styled-components": "5.3.9",
     "styled-system": "^5.1.5",
-    "text-mask-addons": "^3.8.0"
+    "text-mask-addons": "^3.8.0",
+    "tinymce": "7.9.3"
   },
   "resolutions": {
     "@emotion/react": "11.10.6",
-    "@tiptap/core": "2.1.13",
-    "@tiptap/extension-bubble-menu": "2.1.13",
-    "@tiptap/extension-character-count": "2.1.13",
-    "@tiptap/extension-code": "2.1.13",
-    "@tiptap/extension-document": "2.1.13",
-    "@tiptap/extension-floating-menu": "2.1.13",
-    "@tiptap/extension-heading": "2.1.13",
-    "@tiptap/extension-image": "2.1.13",
-    "@tiptap/extension-link": "2.1.13",
-    "@tiptap/extension-table": "2.1.13",
-    "@tiptap/extension-table-cell": "2.1.13",
-    "@tiptap/extension-table-header": "2.1.13",
-    "@tiptap/extension-table-row": "2.1.13",
-    "@tiptap/extension-text": "2.1.13",
-    "@tiptap/extension-text-align": "2.1.13",
-    "@tiptap/extension-typography": "2.1.13",
-    "@tiptap/pm": "2.1.13",
-    "@tiptap/react": "2.1.13",
-    "@tiptap/starter-kit": "2.1.13",
     "hoist-non-react-statics": "3.3.2",
-    "styled-components": "5.3.9"
+    "styled-components": "5.3.9",
+    "@tiptap/core": "3.32.2",
+    "@tiptap/pm": "3.32.2",
+    "@tiptap/react": "3.32.2"
   }
 }

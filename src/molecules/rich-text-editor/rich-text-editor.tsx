@@ -1,17 +1,9 @@
 /* eslint-disable react/require-default-props */
-import CharacterCount from '@tiptap/extension-character-count'
 import Image from '@tiptap/extension-image'
-import Link from '@tiptap/extension-link'
-import Table from '@tiptap/extension-table'
-import TableCell from '@tiptap/extension-table-cell'
-import TableHeader from '@tiptap/extension-table-header'
-import TableRow from '@tiptap/extension-table-row'
+import { Table, TableCell, TableHeader, TableRow } from '@tiptap/extension-table'
 import TextAlign from '@tiptap/extension-text-align'
 import Typography from '@tiptap/extension-typography'
-// Note: Types for @tiptap/react are temporarily ignored due to:
-// https://github.com/ueberdosis/tiptap/issues/3488
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
+import { CharacterCount } from '@tiptap/extensions'
 import { EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import React, { FC, useCallback } from 'react'
@@ -42,10 +34,9 @@ const RichTextEditor: FC<RichTextEditorProps> = (props) => {
 
   const editor = useEditor({
     extensions: [
-      StarterKit,
+      StarterKit.configure({ link: { openOnClick: false } }),
       CharacterCount.configure({ limit, mode: 'nodeSize' }),
       Image,
-      Link.configure({ openOnClick: false }),
       Table,
       TableCell,
       TableHeader,
@@ -57,6 +48,7 @@ const RichTextEditor: FC<RichTextEditorProps> = (props) => {
     content: value,
     onUpdate: handleUpdate,
     injectCSS: true,
+    shouldRerenderOnTransaction: true,
     ...restOptions,
   })
 

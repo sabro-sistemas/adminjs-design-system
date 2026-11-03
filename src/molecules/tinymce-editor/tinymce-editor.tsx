@@ -92,7 +92,8 @@ const TinyMCE: React.FC<TinymceEditorProps> = (props) => {
   return (
     <EditorWrapper>
       <Editor
-        tinymceScriptSrc="https://cdn.jsdelivr.net/npm/tinymce@6.8.2/tinymce.min.js"
+        tinymceScriptSrc="https://cdn.jsdelivr.net/npm/tinymce@7.9.3/tinymce.min.js"
+        licenseKey="gpl"
         onInit={handleInit}
         onEditorChange={handleUpdate}
         value={value}

@@ -22,6 +22,7 @@ const plugins = [
     extensions,
     babelrc: false,
     babelHelpers: 'bundled',
+    exclude: /node_modules/,
     presets: [
       [presetEnv, {
         targets: {
